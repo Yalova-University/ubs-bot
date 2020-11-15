@@ -51,18 +51,13 @@ namespace Ubs_Bot
 
                             try
                             {
-                                //This is my connection string i have assigned the database file address path  
 
-                                //This is my insert query in which i am taking input from the user through windows forms  
                                 string Query2 = "insert into dersler(dersler_icerik) values('" + e + "');";
-                                //This is  MySqlConnection here i have created the object and pass my connection string.  
                                 MySqlConnection MyConn22 = new MySqlConnection("Server=localhost;Database=ubs;Uid=root;Pwd='';");
-
-                                //This is command class which will handle the query and connection object.  
                                 MySqlCommand MyCommand22 = new MySqlCommand(Query2, MyConn22);
                                 MySqlDataReader MyReader22;
                                 MyConn22.Open();
-                                MyReader22 = MyCommand22.ExecuteReader();     // Here our query will be executed and data saved into the database.  
+                                MyReader22 = MyCommand22.ExecuteReader();
 
                                 Console.WriteLine("Save Data");
                                 while (MyReader22.Read())
@@ -81,7 +76,8 @@ namespace Ubs_Bot
                     }
                     
 
-                }
+
+                    }
                 
             }
             else
